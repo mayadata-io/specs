@@ -1,5 +1,7 @@
 ### How do you choose your Control Plane ?
 
+> You always have a choice !
+
 - Is it simple to understand & contribute ?
 - Is it lightweight i.e. made up of bare minimum pieces ?
 - Does it have a tight coupling with its controlled entities (*read applications*) ?
@@ -13,7 +15,7 @@
   - Are these policies declarative in nature ?
 - Can it scale up & down its controlled entities ?
   - Does it do the right placement while scaling up ?
-  - Does it chooese the right entity while scaling down ?
+  - Does it choose the right entity while scaling down ?
 - Does it perform at scale ?
   - Does it publicize its metrics w.r.t varying deployments & varying applications ?
   - *All in the spirit of openness*
