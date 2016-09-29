@@ -22,3 +22,12 @@ the container service is dynamically available to the whole cluster.
 of our systems into the application. Each container that makes up the application has its own 
 lifecycle, and we package those lifecycle behaviors into the application container rather than 
 relying on external infrastructure.
+
+#### MySQL on Autopilot
+
+> [Container Pilot](https://www.joyent.com/containerpilot) will be included in MySQL containers.
+This will orchestrate the bootstrap behavior, **coordinate** replication via Consul. A separate
+logic will be invoked by Container Pilot to do the heavy lifting orchestration work. Details 
+available at this [link](https://www.joyent.com/blog/dbaas-simplicity-no-lock-in)
+
+![Architecture Diagram](https://www.joyent.com/content/blog/20160222-dbaas-simplicity-no-lock-in/architecture.png)
