@@ -12,6 +12,9 @@ on the ingredients that are selected to be parts of Control-Plane.
 #### Raft consensus algorithm
 
 - It mandates what happens in split-brain scenario.
+  - Neither side will be able to elect a leader
+  - Writes are halt
+  - Electing a leader requires a quorum
 
 <br />
 
@@ -36,8 +39,3 @@ on the ingredients that are selected to be parts of Control-Plane.
 
 #### etcd
 
-
-#### corosync
-
-
-#### pacemaker
