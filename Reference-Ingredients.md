@@ -26,6 +26,7 @@ on the ingredients that are selected to be parts of Control-Plane.
   - memcache pool
   - load balancers
   - peer to peer VPN topologies
+- Operates at a node level abstration
 
 <br />
 
@@ -39,6 +40,9 @@ on the ingredients that are selected to be parts of Control-Plane.
 - The database they have chosen in LMDB (*due to its light weight nature*)
   - An embedded database that avoids context switch out of the process
   - Hence is able to serve requests with lower latency & higher throughput
+ - If you combine above statements it becomes, *a consistent key value store based on Raft*
+- Operates at a service level abstraction
+  - Serf is used in Consul to power the discovery of other nodes
 
 <br />
 
