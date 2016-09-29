@@ -34,6 +34,11 @@ on the ingredients that are selected to be parts of Control-Plane.
 - It is a CP system. It trades **availability** for consistency.
   - It is limited to tolerate failures.
   - However, this is not bad as long as the applications' requirements are met.
+- It maintains a logical topology of your network without you doing much
+  - It does it by using a gossip based protocol (*a derivative of paxos called Raft*)
+- The database they have chosen in LMDB (*due to its light weight nature*)
+  - An embedded database that avoids context switch out of the process
+  - Hence is able to serve requests with lower latency & higher throughput
 
 <br />
 
