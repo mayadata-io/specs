@@ -5,6 +5,8 @@ and use-cases once we build/re-use/derive an approach for Control-Plane. The
 references are mentioned explicitly at 
 [link](https://github.com/openebs/Control-Plane/blob/master/Reference-Articles.md)
 
+<br />
+
 #### Consul & Containers
 
 > Build images of applications and services that do not contain any configuration. They
@@ -16,12 +18,16 @@ the container service is dynamically available to the whole cluster.
 
 ![Consul & Docker](http://www.pythian.com/blog/wp-content/uploads/Consul-Demo-Architecture.png)
 
+<br />
+
 #### Autopilot Pattern (*term coined by Triton / Joyent*)
 
 > An approach to application and infrastructure design that pushes automation for each component 
 of our systems into the application. Each container that makes up the application has its own 
 lifecycle, and we package those lifecycle behaviors into the application container rather than 
 relying on external infrastructure.
+
+<br />
 
 #### MySQL on Autopilot
 
