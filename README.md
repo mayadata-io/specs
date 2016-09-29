@@ -1,6 +1,6 @@
 # Control-Plane
 
-A generic architectural control element catering to varying applications' distributed needs.
+A generic decentralized control service catering to any application's distributed needs.
 
 <br />
 
