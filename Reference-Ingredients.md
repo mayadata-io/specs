@@ -25,3 +25,9 @@
 <br />
 
 #### etcd
+
+
+#### corosync
+
+
+#### pacemaker
