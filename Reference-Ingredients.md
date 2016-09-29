@@ -25,10 +25,3 @@
 <br />
 
 #### etcd
-
-
-<br />
-
-#### References
-
-- https://news.ycombinator.com/item?id=7604787
