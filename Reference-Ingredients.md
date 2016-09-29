@@ -5,7 +5,8 @@
 
 This presents some of the key features of the key ingredients that will make the Control-Plane. 
 Most of these are curated from various references. We shall put original metrics & view points 
-on the ingredients that are selected to be parts of Control-Plane.
+on the ingredients that are selected to be parts of Control-Plane. The references are mentioned
+explicitly at [link](https://github.com/openebs/Control-Plane/blob/master/Reference-Articles.md)
 
 <br />
 
