@@ -3,6 +3,16 @@
 > The proportion of ingredients is important, but the final result is also a matter of how you put them together. Equilibrium is key. 
 -- Alain Ducasse
 
+This presents some of the key features of the key ingredients that will make the Control-Plane. 
+Most of these are curated from various references. We shall put original metrics & view points 
+on the ingredients that are selected to be parts of Control-Plane.
+
+<br />
+
+#### Raft consensus algorithm
+
+- It mandates what happens in split-brain scenario.
+
 <br />
 
 #### Serf
