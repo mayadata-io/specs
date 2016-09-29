@@ -1,6 +1,18 @@
 ### List of *Frequently Asked Questions*
 
 
+#### What has service discoverability to do with scaling a service ?
+
+> If the number of requests to your deployed service increases and you want to handle 
+all of them. This implies you want to scale up your service probably by adding resources
+in an incremental fashion. You add load balancers to frontend these resources. You may think
+not to want a service discovery platform. However, when you want to replace a failing
+service with a new one that automatically takes care of dependencies/configuration & 
+discoverability you will want to have a control plane (*composed of service discovery, 
+config management, health checks, etc*) that takes care of these stuff.
+
+<br />
+
 #### What is Service Discovery ?
 
 > Helping services find one another. If my application relies on a DB, then I need 
