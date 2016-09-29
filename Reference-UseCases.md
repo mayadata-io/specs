@@ -8,3 +8,5 @@ container's Consul agent is started which regusters the container's service at C
 the container service is dynamically available to the whole cluster.
 
 > The container does not have any config but only service specific code.
+
+![Consul & Docker](http://www.pythian.com/blog/wp-content/uploads/Consul-Demo-Architecture.png)
