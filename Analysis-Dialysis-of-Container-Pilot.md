@@ -2,7 +2,8 @@
 
 > This is a slice of what an orchestration platform can achieve. This tool 
 (*ContainerPilot*) presents the idea of automating the manual & error prone
-tasks w.r.t post deployment acivities.
+tasks w.r.t registration of application with its dependencies & post 
+deployment activities & a few other concepts.
 
 ### MySQL Autopilot Implementation [WIP]
 
