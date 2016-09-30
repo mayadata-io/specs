@@ -16,7 +16,7 @@ species*. There are multitude of ways these applications are handled. They have 
 and form the building blocks of various line of businesses. They are the nerves of action of any modern 
 day enterprise. 
 
-So how do you manage these applications with the advent of **cloud (or even virtualization)** ? 
+So how do you manage these applications with the advent of **cloud** (*or let's say virtualization*) ? 
 These operations are now delegated to managed service providers (*i.e. the so called cloud providers*). 
 In addition, there is a burst of micro-service patterned / oriented applications that are hogging the 
 limelight. None of these applications want to be tagged as being `monolith`. These application now 
