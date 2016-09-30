@@ -2,9 +2,10 @@
 
 An approach to **orchestration** that understands & caters to any application (*in the world of 
 Information Technology*) & its ecosystem. Here ecosystem encompasses a lot of things e.g. people, 
-processes, companies, operations, customers. It can be thought of something that has its impact 
-with the people handling development, operations, releases to begin with but is definitely not 
-limited to them. The impact travels faster & affects lives within this so called ecosystem.
+processes, companies, operations, customers, compliances, etc. It can be thought of as something 
+that has profound impact on the people handling development, operations, releases to begin with 
+but is definitely not limited to these. This very impact travels faster & affects lives within 
+this so called *ecosystem*.
 
 <br />
 
