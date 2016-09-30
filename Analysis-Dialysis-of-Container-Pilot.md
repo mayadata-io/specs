@@ -28,7 +28,7 @@ deployment activities & a few other concepts.
 
 - building, tagging & shipping to docker hub
 - a test-runner target that is a docker build of tests/Dockerfile
-- *this is where the makefile gets **complex***:
+- *this is where the makefile gets **complex** *:
   - coupling with manta
   - coupling with triton
   - defining & triggering tests on various deployments
