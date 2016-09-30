@@ -3,10 +3,12 @@
 > You always have a choice !
 
 - Is it simple to understand & contribute ?
+ - What is the learning curve involved ?
 - Is it lightweight i.e. made up of bare minimum pieces ?
 - Does it have a loose coupling with its controlled entities (*read applications*) ?
 - Is it agnostic to take care of any application's lifecycle behaviors ?
  - Some of these behaviors are: startup, shutdown, scaling, discovery, & recovery.
+- Does it minimizes human intervention ?
 - Does it force to rely on an external infrastructure ?
 - Does it have a scheduling piece ?
 - Does it have a health checker functionality ?
