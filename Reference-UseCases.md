@@ -31,6 +31,19 @@ relying on external infrastructure.
 
 #### MySQL on Autopilot
 
+##### Service Discovery & Topology Queries
+
+- How does the replica know where to find the primary ?
+- How does the primary tell the replicas where to start replication ?
+- How does the client know where to find nodes & which node accept writes ?
+
+##### Post Deployment Queries
+
+- How do we do backups ?
+- How do we promote a replica if the primary fails ?
+- How do the other replicas know where to find a new primary during failover ?
+- How does the client know that we failed over ?
+
 > [Container Pilot](https://www.joyent.com/containerpilot) will be included in MySQL containers.
 This will orchestrate the bootstrap behavior, **coordinate** replication via Consul. A separate
 logic will be invoked by Container Pilot to do the heavy lifting orchestration work. Details 
