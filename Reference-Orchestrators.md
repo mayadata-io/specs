@@ -15,3 +15,8 @@
 ### Links
 
 - [heron](https://github.com/twitter/heron/tree/master/heron)
+
+
+### Appendix
+
+- 2nd Gen - refers to a library that has evolved from another lib
