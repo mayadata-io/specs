@@ -4,3 +4,4 @@
 - [Configuration Tinkers](http://stani.sh/walter/pfcts/)
 - [Consul & Docker - Hands On](https://www.pythian.com/blog/loose-coupling-and-discovery-of-services-with-consul-part-1/)
 - [MySQL on Autopilot](https://www.joyent.com/blog/dbaas-simplicity-no-lock-in)
+- [Why Twitter moved to Heron ?](https://www.infoq.com/news/2016/09/twitter-opensources-heron)
