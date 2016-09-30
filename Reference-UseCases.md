@@ -1,9 +1,19 @@
-### List of various use-cases / patterns enabled via Control-Plane ingredients
+### List of various use-cases / patterns / mistakes @ Control-Plane
 
 Most of these are curated from various references. We shall put our own patterns 
 and use-cases once we build/re-use/derive an approach for Control-Plane. The
 references are mentioned explicitly at 
 [link](https://github.com/openebs/Control-Plane/blob/master/Reference-Articles.md)
+
+<br />
+
+#### Why Twitter decided to move from Apache Storm to Heron ?
+
+> At Twitter, Apache Storm at our current scale was becoming increasingly challenging due to
+issues related to scalability, debug-ability, manageability, and efficient sharing of cluster 
+resources with other data services.
+
+refer [link](https://www.infoq.com/news/2016/09/twitter-opensources-heron)
 
 <br />
 
