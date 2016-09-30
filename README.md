@@ -21,7 +21,7 @@ across clusters, nodes, racks, datacenters, or even regions (*geographies*).
 Effective tooling that caters to discovery (*i.e. a generic requirement*) & configuration (*i.e. a 
 business/service specific requirement*) are the steps in the right direction. These can be termed as 
 mere *baby steps* to the world of managing applications in cloud. Much more needs to be done and iterated
-by augmenting various other features that are a necessity when dynamics of applications have change. 
+by augmenting various other features that are a necessity when dynamics of applications have changed. 
 
 Refer the [link](https://github.com/openebs/Control-Plane/blob/master/How%20to%20choose%20one.md) that helps 
 you to choose one catering to your needs.
