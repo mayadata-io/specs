@@ -1,5 +1,9 @@
 ## Analyzing ContainerPilot implementation(s)
 
+> This is a slice of what an orchestration platform can achieve. This tool 
+(*ContainerPilot*) presents the idea of automating the manual & error prone
+tasks w.r.t post deployment acivities.
+
 ### MySQL Autopilot Implementation [WIP]
 
 - More on Autopilot pattern can be found [here](http://autopilotpattern.io/)
@@ -12,18 +16,12 @@
 - The base image is ```FROM percona:5.6```
 - The image is kept small & hence a lot of dependencies are mentioned here
   - low level till high level dependencies are mentioned here  
-- MySQL-Autopilot scripts are put at /usr/bin/local
 - Finally the containerpilot command is exposed as a CMD
 
 #### Contents of docker-compose.yml
 
 - This includes two services
-  - mysql & consul
-  - these are not linked
-  - mysql service refers to a containerpilot.json ??
-  - consul service refers to a containerpilot command ??
-- linking of these two services is done in a separate file called local-compose.yml
-  - this file extends from docker-compose.yml
+  - mysql & consul  
 
 #### Contents of makefile
 
