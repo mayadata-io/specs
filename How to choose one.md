@@ -14,6 +14,7 @@
 - Does it have a scheduling piece ?
 - Does it have a health checker functionality ?
   - This helps in abstracting self-healing features from an application.
+- Is it capable of upgrading or rolling back specific entities ?
 - Does it have an reporting or metrics element ?
 - Does it have an API for inquiry purposes ?
 - Is it's scheduling piece pluggable ?
