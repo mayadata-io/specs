@@ -18,9 +18,9 @@ day enterprise.
 
 So how do you manage these applications with the advent of **cloud (or even virtualization)** ? 
 These operations are now delegated to managed service providers (*i.e. the so called cloud providers*). 
-In addition, there is a burst of micro-service patterned / oriented applications. None of these 
-applications want to be tagged as being `monolith`. These application now span across clusters, 
-nodes, racks, datacenters, or even regions (*geographies*). 
+In addition, there is a burst of micro-service patterned / oriented applications that are hogging the 
+limelight. None of these applications want to be tagged as being `monolith`. These application now 
+span across clusters, nodes, racks, datacenters, or even regions (*geographies*). 
 
 Effective tooling that caters to discovery (*i.e. a generic requirement*) & configuration (*i.e. a 
 business/service specific requirement*) are the steps in the right direction. These can be termed as 
