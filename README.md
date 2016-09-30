@@ -1,6 +1,6 @@
 # Control-Plane
 
-A generic control service catering to any application's distributed needs.
+A generic **control service** approach catering to any application's distributed needs.
 
 <br />
 
