@@ -12,7 +12,7 @@ this so called *ecosystem*.
 # Why ? What is the need ?
 
 There are numerous types of applications. *Perhaps they can be termed as a primitive form of robotic 
-species*. There are multitude of way these applications are handled. They have a tag, have an SLA,
+species*. There are multitude of ways these applications are handled. They have a tag, have an SLA,
 and form the building blocks of various line of businesses. They are the nerves of action of any modern 
 day enterprise. 
 
