@@ -23,4 +23,4 @@
   - Does it publicize its metrics w.r.t varying deployments & varying applications ?
   - *All in the spirit of openness*
 - Can it be debugged at ease ?
-- What type of system it supports w.r.t CAP (Consistency, Availability, Partition) ?
+- What type of system it is made of w.r.t CAP (Consistency, Availability, Partition) ?
