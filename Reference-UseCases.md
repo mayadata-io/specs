@@ -17,6 +17,17 @@ refer [link](https://www.infoq.com/news/2016/09/twitter-opensources-heron)
 
 <br />
 
+#### Can you make it simple ?
+
+> **Simplified orchestration:** In an attempt to provide more reliable orchestration people often 
+propose or gravitate towards complex workflow engines. Stampede tries to find an elegant balance 
+between complex workflows and naive sequential programming. Stampede is heavily focused on the 
+concept of managing state transitions and attaching logic to those transitions.
+
+refer [link](https://github.com/cattleio/stampede#concepts)
+
+<br />
+
 #### Consul & Containers
 
 > Build images of applications and services that do not contain any configuration. They
