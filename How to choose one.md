@@ -4,7 +4,7 @@
 
 - Is it simple to understand & contribute ?
 - Is it lightweight i.e. made up of bare minimum pieces ?
-- Does it have a tight coupling with its controlled entities (*read applications*) ?
+- Does it have a loose coupling with its controlled entities (*read applications*) ?
 - Is it agnostic to take care of any application's lifecycle behaviors ?
  - Some of these behaviors are: startup, shutdown, scaling, discovery, & recovery.
 - Does it force to rely on an external infrastructure ?
