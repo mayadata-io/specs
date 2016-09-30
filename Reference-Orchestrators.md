@@ -1,6 +1,6 @@
 ### Reference implementations of various orchestration platforms
 
-> There may not be direct 1-to-1 mapping.
+> The references mentioned here may not be a direct 1-to-1 mapping.
 
 > *The best hacker is the one who steals the idea & not the source code*.
 
