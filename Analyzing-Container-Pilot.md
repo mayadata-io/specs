@@ -1,6 +1,6 @@
 ## Analyzing ContainerPilot implementation(s)
 
-### MySQL Autopilot Implementation
+### MySQL Autopilot Implementation [WIP]
 
 - More on Autopilot pattern can be found [here](http://autopilotpattern.io/)
 - The key enabler that implements *autopilot pattern* for MySQL is **ContainerPilot**
