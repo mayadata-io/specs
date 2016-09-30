@@ -1,4 +1,4 @@
-## Analyzing ContainerPilot implementation(s)
+## Analyzing ContainerPilot Implementation(s)
 
 > This is a slice of what an orchestration platform can achieve. This tool 
 (*ContainerPilot*) presents the idea of automating the manual & error prone
