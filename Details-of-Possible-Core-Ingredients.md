@@ -11,7 +11,7 @@ explicitly at [link](https://github.com/openebs/Control-Plane/blob/master/Refere
 
 <br />
 
-#### Raft consensus algorithm
+#### `Raft consensus algorithm`
 
 - It mandates what happens in split-brain scenario.
   - Neither side will be able to elect a leader
@@ -20,7 +20,7 @@ explicitly at [link](https://github.com/openebs/Control-Plane/blob/master/Refere
 
 <br />
 
-#### Serf
+#### `Serf`
 
 - It is an AP system. It trades **consistency** for availability.
   - Even when 90% of your instances are down, the Serf cluster will operate
@@ -32,7 +32,7 @@ explicitly at [link](https://github.com/openebs/Control-Plane/blob/master/Refere
 
 <br />
 
-#### Consul
+#### `Consul`
 
 - It is a CP system. It trades **availability** for consistency.
   - It is limited to tolerate failures.
@@ -48,7 +48,7 @@ explicitly at [link](https://github.com/openebs/Control-Plane/blob/master/Refere
 
 <br />
 
-#### etcd
+#### `etcd`
 
 
 <br />
