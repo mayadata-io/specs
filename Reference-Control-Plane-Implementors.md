@@ -6,12 +6,20 @@
 
 <br />
 
-| Name          | Lang          | Domain         | Backers  | Maturity  | Features     |  UI   | Active | 
-| :-----------: |:-------------:| :-------:      | :-----:  | :-----:   |  :------:    | :---: |  :---: |
-| Heron         | Java, Py, CPP |  Analytics     | Twitter  | 2nd Gen   |  ..          | ..    | Yes    |
-| Rancher       | GO            | Infrastructure | Rancher  | 2nd Gen   |  ..          | Yes   | No     |
-| Kubernetes    | GO            | Infrastructure | Google   | 2nd Gen   |  ..          | Yes   | Yes    |
-| Nomad         | GO            | Infrastructure | HashiCorp| 1st Gen   |  ..          | ..    | Yes    |
+| Name          | Lang          | Domain         | Backers  | Maturity  | UI     | Active | 
+| :-----------: |:-------------:| :-------:      | :-----:  | :-----:   | :---:  |  :---: |
+| Heron         | Java, Py, CPP |  Analytics     | Twitter  | 2nd Gen   |  ..    | Yes    |
+| Rancher       | GO            | Infrastructure | Rancher  | 2nd Gen   |  Yes   | No     |
+| Kubernetes    | GO            | Infrastructure | Google   | 2nd Gen   |  Yes   | Yes    |
+| Nomad         | GO            | Infrastructure | HashiCorp| 1st Gen   |  ..    | Yes    |
+| Terraform     | GO            | Infrastructure | HashiCorp| 1st Gen   |  ..    | Yes    |
+
+<br />
+
+| Name          | Features                                             | 
+| :-----------: | :--------------------------------------------------: | 
+| Nomad         | Cluster Management & Scheduler                       |
+| Terraform     | Build, Modify & Version infrastructure               |
 
 <br />
 
