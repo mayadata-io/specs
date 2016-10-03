@@ -10,8 +10,8 @@
 | :-----------: |:-------------:| :-------:      | :-----:  | :-----:   |  :------:    | :---: |  :---: |
 | heron         | Java, Py, CPP |  Analytics     | Twitter  | 2nd Gen   |  ..          | ..    | Yes    |
 | Rancher       | GO            | Infrastructure | Rancher  | 2nd Gen   |  ..          | Yes   | No     |
-| kubernetes    | Go            | Infrastructure | Google   | 2nd Gen   |  ..          | Yes   | Yes    |
-| nomad         | Go            | Infrastructure | hashiCorp| 1st Gen   |  ..          | ..    | Yes    |
+| kubernetes    | GO            | Infrastructure | Google   | 2nd Gen   |  ..          | Yes   | Yes    |
+| nomad         | GO            | Infrastructure | HashiCorp| 1st Gen   |  ..          | ..    | Yes    |
 
 <br />
 
