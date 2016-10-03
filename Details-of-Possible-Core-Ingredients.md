@@ -50,3 +50,20 @@ explicitly at [link](https://github.com/openebs/Control-Plane/blob/master/Refere
 
 #### etcd
 
+
+<br />
+
+#### `Terraform`
+
+- Build, Modify & Version infrastructure with ease
+- Generates an execution plan that describes the steps to reach the desired infra
+- Create incremental execution plans which can be applied
+- Manage a single application or an entire datacenter
+
+<br />
+
+#### `Kubernetes`
+
+- Scheduling is policy-rich, topology-aware, workload-specific function
+- Aspires to be an extensible, pluggable, building-block OSS platform & toolkit
+- Enables higher-level PaaS functions without modification to core
