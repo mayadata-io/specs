@@ -8,10 +8,10 @@
 
 | Name          | Lang          | Domain         | Backers  | Maturity  | Dependencies |  UI   | Active | 
 | :-----------: |:-------------:| :-------:      | :-----:  | :-----:   |  :------:    | :---: |  :---: |
-| heron         | Java, Py, CPP |  Analytics     | Twitter  | 2nd Gen   |  ..          | ..    | Yes    |
+| Heron         | Java, Py, CPP |  Analytics     | Twitter  | 2nd Gen   |  ..          | ..    | Yes    |
 | Rancher       | GO            | Infrastructure | Rancher  | 2nd Gen   |  ..          | Yes   | No     |
-| kubernetes    | GO            | Infrastructure | Google   | 2nd Gen   |  ..          | Yes   | Yes    |
-| nomad         | GO            | Infrastructure | HashiCorp| 1st Gen   |  ..          | ..    | Yes    |
+| Kubernetes    | GO            | Infrastructure | Google   | 2nd Gen   |  ..          | Yes   | Yes    |
+| Nomad         | GO            | Infrastructure | HashiCorp| 1st Gen   |  ..          | ..    | Yes    |
 
 <br />
 
