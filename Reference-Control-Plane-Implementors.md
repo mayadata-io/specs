@@ -9,7 +9,7 @@
 | Name          | Lang          | Domain         | Backers  | Maturity  | Dependencies |  UI   | Active | 
 | :-----------: |:-------------:| :-------:      | :-----:  | :-----:   |  :------:    | :---: |  :---: |
 | heron         | Java, Py, CPP |  Analytics     | Twitter  | 2nd Gen   |  ..          | ..    | Yes    |
-| stampede      | shell         | Infrastructure | Rancher  | 1st Gen   |  ..          | ..    | No     |
+| Rancher       | GO            | Infrastructure | Rancher  | 2nd Gen   |  ..          | Yes   | No     |
 | kubernetes    | Go            | Infrastructure | Google   | 2nd Gen   |  ..          | Yes   | Yes    |
 | nomad         | Go            | Infrastructure | hashiCorp| 1st Gen   |  ..          | ..    | Yes    |
 
