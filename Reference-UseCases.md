@@ -9,6 +9,14 @@ references are mentioned explicitly at
 
 <br />
 
+#### Stuff provided by `Kubernetes`
+
+- Scheduling is policy-rich, topology-aware, workload-specific function
+- Aspires to be an extensible, pluggable, building-block OSS platform & toolkit
+- Enables higher-level PaaS functions without modification to core
+
+<br />
+
 #### Why Twitter decided to move from Apache Storm to Heron ?
 
 > At Twitter, Apache Storm at our current scale was becoming increasingly challenging due to
