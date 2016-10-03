@@ -6,7 +6,7 @@
 
 <br />
 
-| Name          | Lang          | Domain         | Backers  | Maturity  | Dependencies |  UI   | Active | 
+| Name          | Lang          | Domain         | Backers  | Maturity  | Features     |  UI   | Active | 
 | :-----------: |:-------------:| :-------:      | :-----:  | :-----:   |  :------:    | :---: |  :---: |
 | Heron         | Java, Py, CPP |  Analytics     | Twitter  | 2nd Gen   |  ..          | ..    | Yes    |
 | Rancher       | GO            | Infrastructure | Rancher  | 2nd Gen   |  ..          | Yes   | No     |
