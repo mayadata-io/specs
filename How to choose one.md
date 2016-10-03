@@ -3,16 +3,21 @@
 > You always have a choice !
 
 - Is it simple to understand & contribute ?
- - What is the learning curve involved ?
+  - What is the learning curve involved ?
 - Is it lightweight i.e. made up of bare minimum pieces ?
 - Does it have a loose coupling with its controlled entities (*read applications*) ?
-- Is it agnostic to Operating Systems, infrastructure platforms ?
-- Is it containers' specific ?
- - Can it be applied for VM usecases as well ?
-- Is it agnostic to take care of any application's lifecycle behaviors ?
- - Some of these behaviors are: startup, shutdown, scaling, discovery, & recovery.
-- Does it minimizes human intervention ?
+- Is it agnostic to Operating Systems ?
+- Is it agnostic to infrastructure platforms ?
 - Does it force to rely on an external infrastructure ?
+- Is it containers' specific ?
+  - Can it be applied for VM usecases as well ?
+  - Can it be applied to standalone applications ?
+  - In other words what does it abstract ?
+- Is it agnostic to take care of any application's lifecycle behaviors ?
+  - Some of these behaviors are: startup, shutdown, scaling, discovery, & recovery.
+- Does it minimizes human intervention ?
+- Does it allow applying policies/constraints at run-time ?
+  - Though this is manual, it has its usages.
 - Does it have a scheduling piece ?
 - Does it have a health checker functionality ?
   - This helps in abstracting self-healing features from an application.
