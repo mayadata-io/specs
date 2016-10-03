@@ -14,6 +14,7 @@ references are mentioned explicitly at
 - Build, Modify & Version infrastructure with ease
 - Generates an execution plan that describes the steps to reach the desired infra
 - Create incremental execution plans which can be applied
+- Manage a single application or an entire datacenter
 
 <br />
 
