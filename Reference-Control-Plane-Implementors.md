@@ -16,10 +16,10 @@
 
 <br />
 
-| Name          | Features                                             | 
-| :-----------: | :--------------------------------------------------: | 
-| Nomad         | Cluster Management & Scheduler                       |
-| Terraform     | Build, Modify & Version infrastructure               |
+| Name          | Features                                             | Competes With            |
+| :-----------: | :--------------------------------------------------: | :-----------------------:|
+| Nomad         | Cluster Management & Scheduler                       | Kubernetes               |
+| Terraform     | Build, Modify & Version infrastructure               | Chef, Puppet, Bosh, Heat |
 
 <br />
 
