@@ -1,15 +1,23 @@
-### List of various use-cases / patterns / mistakes w.r.t Control-Plane
+### List of various use-cases / patterns / tools w.r.t Control-Plane
 
 Most of these are curated from various references. We shall put our own patterns 
 and use-cases once we build/re-use/derive an approach for Control-Plane. The
 references are mentioned explicitly at 
 [link](https://github.com/openebs/Control-Plane/blob/master/Reference-Articles.md)
 
-> Most of these present a slice of what an orchestration platform can achieve.
+> Most of these present a **slice** of what an orchestration platform should aim for.
 
 <br />
 
-#### Stuff provided by `Kubernetes`
+#### `Terraform`
+
+- Build, Modify & Version infrastructure with ease
+- Generates an execution plan that describes the steps to reach the desired infra
+- Create incremental execution plans which can be applied
+
+<br />
+
+#### `Kubernetes`
 
 - Scheduling is policy-rich, topology-aware, workload-specific function
 - Aspires to be an extensible, pluggable, building-block OSS platform & toolkit
