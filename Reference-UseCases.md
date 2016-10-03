@@ -1,9 +1,11 @@
-### List of various use-cases / patterns / mistakes @ Control-Plane
+### List of various use-cases / patterns / mistakes w.r.t Control-Plane
 
 Most of these are curated from various references. We shall put our own patterns 
 and use-cases once we build/re-use/derive an approach for Control-Plane. The
 references are mentioned explicitly at 
 [link](https://github.com/openebs/Control-Plane/blob/master/Reference-Articles.md)
+
+> Most of these present a slice of what an orchestration platform can achieve.
 
 <br />
 
