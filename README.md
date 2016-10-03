@@ -1,8 +1,8 @@
 # Control-Plane
 
 An approach to *orchestration* that is able to cater the needs of higher order entities 
-e.g. regions, data centers, servers to the lowest most entity (in the hierarchy of entites)
-i.e. an application. In short an approach that takes care of the entire ecosystem impacted 
+e.g. regions, data centers, servers to the lowest most entity (*in the hierarchy of entites*)
+i.e. an application. In other words, an approach that takes care of the entire ecosystem impacted 
 by an application. An ecosystem can encompass a lot of additional entities in addition to above 
 mentioned higher order entities, e.g. people, processes, companies, operations, customers, 
 compliances, etc. It can be thought of as something that has profound impact on the people 
