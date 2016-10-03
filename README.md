@@ -20,7 +20,8 @@ are the nerves of action of any modern day enterprise.
 So how do you manage these applications with the advent of cloud (*or let's say virtualization*) ? 
 These operations are now delegated to managed service providers (*i.e. the so called cloud providers*). 
 These application now span across clusters, nodes, racks, datacenters, or even regions (*geographies*). 
-The question that comes up is: *how do we build, deploy, & manage **millions** of application instances* ?
+The question that comes up is: *how do we build, deploy, & manage <b> millions </b> of such application
+instances* ?
 
 Effective tooling that caters to discovery (*i.e. a generic requirement*) & configuration (*i.e. a 
 business/service specific requirement*) are the steps in the right direction. These can be termed as 
