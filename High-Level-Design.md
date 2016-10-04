@@ -30,11 +30,13 @@
 
 ### Modules / Components
 
-- Fault Tolerance
+- Fault Management
   - Automatic detection of faults, & tools to recover from inconsistent states
-- Supportability
-  - Leading to self healing
-- Life-Cycle
+- Support Management
+  - Otherwise known as supportability of a software
+  - Does it strive to being fully automatic ?
+  - This leads to features such as self-healing
+- Life-Cycle Management
 - Secrets Management
 - Config Management
 
