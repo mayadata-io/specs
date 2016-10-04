@@ -32,18 +32,23 @@
 
 - Fault Management
   - Automatic detection of faults, & tools to recover from inconsistent states
-- Support Management
+  - Real-time failover
+- Self-Serving
+- Self-Healing
   - Otherwise known as supportability of a software
   - Does it strive to being fully automatic ?
   - This leads to features such as self-healing
 - Life-Cycle Management
 - Secrets Management
 - Config Management
-- Monitoring Management
+- Monitoring
   - Containers are getting smaller & more numerous
   - Understanding their interdependencies to do the root cause analysis
   - Maintaining operational health at scale
   - Monitoring systems need to be more available & scalable than the systems being monitored
+  - Monitoring on an orchestration layer imposes fair amount of complexity
+    - understand the semantic context imposed on the containers by the orchestration system
+    - containers are being served from schedulers across a variety of underlying nodes
 - Policy Change Management
   - Monitor policy changes
   - Alert on invalid configurations
