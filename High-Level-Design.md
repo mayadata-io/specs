@@ -49,6 +49,8 @@
   - Monitoring on an orchestration layer imposes fair amount of complexity
     - understand the semantic context imposed on the containers by the orchestration system
     - containers are being served from schedulers across a variety of underlying nodes
+  - Differentiate between data & information
+    - Metrics need to be provided with context to aid interpretation
 - Policy Change Management
   - Monitor policy changes
   - Alert on invalid configurations
