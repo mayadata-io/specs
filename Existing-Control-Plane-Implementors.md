@@ -1,8 +1,7 @@
 ### Reference implementations of various orchestration platforms
 
-> The references mentioned here may not be a direct 1-to-1 mapping.
-
-> *The best hacker is the one who steals the idea & not the source code*.
+> The references mentioned here may provide a full-fledged orchestration needs
+or maybe providing a part of the entire orchestration ecosystem.
 
 <br />
 
