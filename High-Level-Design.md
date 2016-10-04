@@ -39,7 +39,11 @@
 - Life-Cycle Management
 - Secrets Management
 - Config Management
-- Analytics Management
+- Monitoring Management
+  - Containers are getting smaller & more numerous
+  - Understanding their interdependencies to do the root cause analysis
+  - Maintaining operational health at scale
+  - Monitoring systems need to be more available & scalable than the systems being monitored
 - Policy Change Management
   - Monitor policy changes
   - Alert on invalid configurations
@@ -59,3 +63,4 @@
 - refer [Zeppelin Framework Proposal & Development Roadmap](https://medium.com/zeppelin-blog/zeppelin-framework-proposal-and-development-roadmap-fdfa9a3a32ab#.49wfkeyey)
 - refer [Cattle Concepts](http://docs.cattle.io/en/latest/concepts/orchestration.html#resources)
 - refer [OpenZeppelin Style Guide](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/CONTRIBUTING.md#style-guidelines)
+- refer [InfoQ on Containers](http://www.infoq.com/resource/minibooks/emag-container-technology/en/pdf/Exploring-Container-Technology-in-the-Real-World-eMag.pdf)
