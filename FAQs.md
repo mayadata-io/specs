@@ -1,6 +1,15 @@
 ### List of *Frequently Asked Questions*
 
 
+#### What has orchestration to do with containers' philosophy ?
+
+> Containers should be lightweight, reproducible, and unburdened by agents. Orchestrating
+these should *respect the sanctity, portability & reproducibility of each container.*
+
+refer - [InfoQ on containers](http://www.infoq.com/resource/minibooks/emag-container-technology/en/pdf/Exploring-Container-Technology-in-the-Real-World-eMag.pdf)
+
+<br />
+
 #### What has service discoverability to do with scaling a service ?
 
 > If the number of requests to your deployed service increases and you want to handle 
