@@ -5,24 +5,25 @@
 ### Core Development Principles
 
 - Simple
-  - Below are fundamental to achive simplicity
+  - We all agree, it is tough to expose simplicity
     - Documentation / Literate programming
     - Code Clarity
     - Code Consistency
-      - This leads to style guidelines
-      - refer [OpenZeppelin Style Guide](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/CONTRIBUTING.md#style-guidelines)
+      - Follow guidelines to achieve consistency
     - Community Review
-    - Modularity / DRY
+    - Modularity / DRY Code
 - Naming
-  - Take time to pick names that are well understood & match the intention
+  - Take time to pick names that are well understood
+  - Names should match their intention
 - Standard Orchestration Contracts
   - This leads to composable & pluggable components
 - Tests
-  - Unit Testing must result into 100% code coverage
-  - *In a recent paper, it was found that 88% of critical bugs could have been discovered by unit tests*
+  - Unit Testing leading to 100% code coverage
+  - *In a recent paper, it was found that <b> 88% of critical bugs </b> could have been discovered by unit tests*
 - CD & CI
-  - At any point of time, the code should be in a production grade releasable format
-  - Aim to eliminate manual involvement towards release
+  - At any point of time, the code should be in a production grade i.e. releas-able format
+  - Aim to eliminate manual involvement towards a release
+    - In other words, it is impractical & error prone to release based on manual efforts
     - QA & release manager(s) should only supplement above process
 
 <br />
@@ -50,3 +51,4 @@
 
 - refer [Zeppelin Framework Proposal & Development Roadmap](https://medium.com/zeppelin-blog/zeppelin-framework-proposal-and-development-roadmap-fdfa9a3a32ab#.49wfkeyey)
 - refer [Cattle Concepts](http://docs.cattle.io/en/latest/concepts/orchestration.html#resources)
+- refer [OpenZeppelin Style Guide](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/CONTRIBUTING.md#style-guidelines)
