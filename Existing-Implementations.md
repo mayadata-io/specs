@@ -12,6 +12,7 @@ or maybe providing a part of the entire orchestration ecosystem.
 | Kubernetes    | GO            | Infrastructure | Google   | 2nd Gen   |  Yes   | Yes    |
 | Nomad         | GO            | Infrastructure | HashiCorp| 1st Gen   |  ..    | Yes    |
 | Terraform     | GO            | Infrastructure | HashiCorp| 1st Gen   |  ..    | Yes    |
+| Atlas         | Scala         | Analytics      | Netflix  | 1st Gen   |  ..    | Yes    |
 
 <br />
 
