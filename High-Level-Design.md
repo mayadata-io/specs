@@ -5,7 +5,7 @@
 ### Core Development Principles
 
 - Simple
-  - We all agree, it is tough to expose simplicity
+  - We all agree, it is tough to build simple products
     - Documentation / Literate programming
     - Code Clarity
     - Code Consistency
