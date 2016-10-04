@@ -39,6 +39,7 @@
 - Life-Cycle Management
 - Secrets Management
 - Config Management
+- Analytics Management
 
 <br />
 
