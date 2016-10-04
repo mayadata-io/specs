@@ -40,6 +40,10 @@
 - Secrets Management
 - Config Management
 - Analytics Management
+- Policy Change Management
+  - Monitor policy changes
+  - Alert on invalid configurations
+  - Track down potential problems
 
 <br />
 
