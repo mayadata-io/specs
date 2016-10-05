@@ -1,6 +1,15 @@
 ### List of *Frequently Asked Questions*
 
 
+#### Why do we care about containers when we design a workflow ?
+
+> Containers can enable a workflow that is just a few per cent quicker, that has a
+knock-on effect that allows them to evolve faster than the competition. 
+
+refer - [InfoQ on containers](http://www.infoq.com/resource/minibooks/emag-container-technology/en/pdf/Exploring-Container-Technology-in-the-Real-World-eMag.pdf)
+
+<br />
+
 #### What has orchestration to do with containers' philosophy ?
 
 > Containers should be lightweight, reproducible, and unburdened by agents. Orchestrating
