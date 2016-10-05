@@ -1,5 +1,10 @@
 ### List of *Frequently Asked Questions*
 
+#### What are containers ?
+
+> Unix processes. They are made up of 2 things:
+- 1/ image = application + dependencies
+- 2/ runtime env = cgroups, namespaces, env vars
 
 #### Why do we care about containers when we design a workflow ?
 
