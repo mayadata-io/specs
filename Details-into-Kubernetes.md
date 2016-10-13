@@ -116,3 +116,49 @@ kubectl config set-cluster $CLUSTER_NAME --certificate-authority=$CA_CERT --embe
 kubectl config set-context $CONTEXT_NAME --cluster=$CLUSTER_NAME --user=$USER
 kubectl config use-context $CONTEXT_NAME
 ```
+
+### kubeconfig file for others
+
+- What are others here ?
+  - kubelet & kube-proxy
+- There are 3 possible options
+  - same credentials as the admin
+  - one token & kubeconfig file for all kubelets, one for all kube-proxy & one for admin
+  - different credentials for every kubelet, etc
+- How to do it ?
+  - copy $HOME/.kube/config
+  - or learn the code @ cluster/gce/configure-vm.sh
+  - or a template
+  - to dest @ 
+    - /var/lib/kube-proxy/kubeconfig
+    - /var/lib/kubelet/kubeconfig
+
+### Configuring Base Software on Nodes
+
+- Base OS + docker + kubelet + kube-proxy
+- Docker version depends on kubelet version
+- Need to install docker with Kubernetes specific options
+  - else remove the networking settings
+
+```bash
+iptables -t nat -F
+ip link set docker0 down
+ip link delete docker0
+```
+
+### Docker networking as per Kubernetes
+
+- Create own bridge for the per-node CIDR ranges
+  - set --bridge=cbr0
+- Docker should not manage iptables for host-ports & instead let kube-proxy do this
+  - set --iptables=false
+- If we want POD IP to be routable
+  - set --ip-masq=false
+- If using flannel, need to consider the extra packet size due to udp encapsulation
+  - set --mtu=
+- If you want to connect to a private registry without using SSL
+  - --insecure-registry $CLUSTER_SUBNET
+- Perhaps need to increase the no. of open files for docker
+  - DOCKER_NOFILE=1000000
+- NOTE: *Ensire docker works correctly before proceeding with rest of install*
+
