@@ -7,11 +7,11 @@
 
 - Refer [scratch](http://kubernetes.io/docs/getting-started-guides/scratch/)
 
-### Cloud Provider 
+#### Cloud Provider 
 - Specs - pkg/cloudprovider/cloud.go
 - Manages load balancers, nodes, & networking routes
 
-### On IPs
+#### On IPs
 
 - Need to provide a block of IPs to Kubernetes to be used as PODs IPs
 - Pod to pod communication via IP of the pod 
@@ -37,12 +37,12 @@
  - Enable ipv4 forwarding: sysctl net.ipv4.ip_forward = 1
 - Can have fine grained networking policy between PODs using Network Policy resource
 
-### Regions
+#### Regions
 
 - Clusters can be represented as regions
   - Provide a cluster name e.g. **CLUSTER_NAME**
 
-### Binaries
+#### Binaries
 
 - The Kubernetes binaries required are:
   - etcd, docker/rkt, kubelet, kube-proxy, kube-apiserver, kube-controller-manager, kube-scheduler
@@ -70,7 +70,7 @@
   - hyperkube kubelet runs kubelet
   - hyperkube apiserver runs apiserver
 
-### HTTPS access to apiserver
+#### HTTPS access to apiserver
 
 - refer [creating certificates](http://kubernetes.io/docs/admin/authentication/#creating-certificates)
 - Need to prepare the certs & credentials
@@ -88,7 +88,7 @@
   - KUBELET_KEY *optional*
 
 
-### Credentials
+#### Credentials
 
 - Admin needs token or password to get identified
   - tokens are alphanumeric e.g. 32 chars
@@ -99,7 +99,7 @@
   - refer [kubeconfig](http://kubernetes.io/docs/user-guide/kubeconfig-file/)
   - Use kubectl commandline options
 
-### kubconfig file for administrators
+#### kubconfig file for administrators
 
 ```bash
 
@@ -114,7 +114,7 @@ kubectl config set-context $CONTEXT_NAME --cluster=$CLUSTER_NAME --user=$USER
 kubectl config use-context $CONTEXT_NAME
 ```
 
-### kubeconfig file for others
+#### kubeconfig file for others
 
 - What are others here ?
   - kubelet & kube-proxy
@@ -130,7 +130,7 @@ kubectl config use-context $CONTEXT_NAME
     - /var/lib/kube-proxy/kubeconfig
     - /var/lib/kubelet/kubeconfig
 
-### Configuring Base Software on Nodes
+#### Configuring Base Software on Nodes
 
 - Base OS + docker + kubelet + kube-proxy
 - Docker version depends on kubelet version
@@ -143,7 +143,7 @@ ip link set docker0 down
 ip link delete docker0
 ```
 
-### Configure Docker as per Kubernetes
+#### Configure Docker as per Kubernetes
 
 - Create own bridge for the per-node CIDR ranges
   - set --bridge=cbr0
@@ -159,7 +159,7 @@ ip link delete docker0
   - DOCKER_NOFILE=1000000
 - NOTE: *Ensire docker works correctly before proceeding with rest of install*
 
-### Configure kubelet - the node agent
+#### Configure kubelet - the node agent
 
 - All nodes should run kubelet
 - Args to consider:
@@ -176,11 +176,11 @@ ip link delete docker0
   - set --configure-cbr0=
   - set --register-node=
 
-### Configure kube-proxy
+#### Configure kube-proxy
 
 - just the HTTPS or HTTP approach
 
-### Networking
+#### Networking
 
 - Each node needs to be allocated its own CIDR for pod networking
   - NODE_X_POD_CIDR
@@ -207,17 +207,17 @@ ip link delete docker0
   - masquerade for the destination IPs outside the cluster networking
     - iptables -t nat -A POSTROUTING ! ${CLUSTER_SUBNET} -m addrtype ! --dst-type LOCAL -j MASQUERADE
 
-### House Keeping Tasks
+#### House Keeping Tasks
 
 - configure log rotation e.g. logrotate
 - setup liveness monitoring e.g. supervisord
 
-### Bootstrapping the Cluster
+#### Bootstrapping the Cluster
 
 - Node services e.g. kubelet, kube-proxy & docker are typically started & managed using automation approaches
 - The remaining master components of Kubernetes are all configured & managed by Kubernetes
 
-### etcd pod
+#### etcd pod
 
 - 2 approaches
   - Run one etcd instance, with its log written to a durable storage (RAID, GCE PD)
@@ -230,7 +230,7 @@ ip link delete docker0
   - Start the pod by putting it into the kubelet manifest directory
 - So etcs runs as a pod
 
-### apiserver pod
+#### apiserver pod
 
 - Each one of them runs as *a pod on the master node*
 - Start with a provided template
@@ -264,11 +264,11 @@ ip link delete docker0
   - optionally mount /var/log as well & redirect output
     - this is reqd. if *logs need to be accessible from the root filesystem with tools like journalctl*
 
-### scheduler pod
+#### scheduler pod
 
 - use the required manifest file
 
-### controller-manager pod
+#### controller-manager pod
 
 - use the required manifest
 - following flags may be considered
@@ -280,14 +280,14 @@ ip link delete docker0
   - --service-account-private-key-file=/srv/kubernetes/server.key
   - --master=127.0.0.1:8080
 
-### Cloud Providers
+#### Cloud Providers
 
 - --cloud-provuder
   - aws, gce, mesos, vagrant, unset
   - unset is used for bare metal
 - some of these cloud providers require a config file setting
 
-### Starting & Verifying apiserver, etcd & controller-manager pods
+#### Starting & Verifying apiserver, etcd & controller-manager pods
 
 - Place each pod template into kubelet config dir
   - i.e. --config= option of kubelet
@@ -298,23 +298,23 @@ ip link delete docker0
   - kubelet will begin self-registering with the apiserver
   - kubectl get nodes
 
-### Cluster Addon - DNS
+#### Cluster Addon - DNS
 
-### Cluster Addon - Logging
+#### Cluster Addon - Logging
 
-### Cluster Addon - Container Resource Monitoring
+#### Cluster Addon - Container Resource Monitoring
 
 
 ## Kubernetes on Fedora
 
-###
+####
 
 ## Others
 
-### Cluster Troubleshooting - TODO
+#### Cluster Troubleshooting - TODO
 
 - http://kubernetes.io/docs/admin/cluster-troubleshooting/
 
-### More on Networking - TODO
+#### More on Networking - TODO
 
 - http://kubernetes.io/docs/admin/networking/
