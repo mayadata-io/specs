@@ -71,3 +71,4 @@
 - refer [Cattle Concepts](http://docs.cattle.io/en/latest/concepts/orchestration.html#resources)
 - refer [OpenZeppelin Style Guide](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/CONTRIBUTING.md#style-guidelines)
 - refer [InfoQ on Containers](http://www.infoq.com/resource/minibooks/emag-container-technology/en/pdf/Exploring-Container-Technology-in-the-Real-World-eMag.pdf)
+- refer [Build Technical Wealth](http://firstround.com/review/forget-technical-debt-heres-how-to-build-technical-wealth/?mc_cid=07889699da&mc_eid=9a1ca6920c)
