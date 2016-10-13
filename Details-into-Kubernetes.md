@@ -1,9 +1,17 @@
-### Tips to Kubernetes from Scratch
+## Tips to Kubernetes from Scratch
 
 - Refer [scratch](http://kubernetes.io/docs/getting-started-guides/scratch/)
-- Cloud Provider 
-  - Specs - pkg/cloudprovider/cloud.go
-  - Manages load balancers, nodes, & networking routes
+
+<br />
+
+### Cloud Provider 
+- Specs - pkg/cloudprovider/cloud.go
+- Manages load balancers, nodes, & networking routes
+
+<br />
+
+### On IPs
+
 - Need to provide a block of IPs to Kubernetes to be used as PODs IPs
 - Pod to pod communication via IP of the pod 
   - overlay network 
@@ -27,19 +35,54 @@
 - Open access to apiserver ports 80 &/or 443
  - Enable ipv4 forwarding: sysctl net.ipv4.ip_forward = 1
 - Can have fine grained networking policy between PODs using Network Policy resource
+
+<br />
+
+### Regions
+
 - Clusters can be represented as regions
   - Provide a cluster name e.g. CLUSTER_NAME
-- The binaries required are:
+
+<br />
+
+### Binaries
+
+- The Kubernetes binaries required are:
   - etcd, docker/rkt, kubelet, kube-proxy, kube-apiserver, kube-controller-manager, kube-scheduler
   - https://github.com/kubernetes/kubernetes/releases/latest
   - Kubernetes binary has all its dependant binaries
-- What runs outside the container ?
+- What should run outside the container ?
   - *docker, kubelet, kube-proxy* ~ same way as we run the system daemons
   - Hence bare binaries are reqd
-- What should run as a container ?
+- What should run as-a container ?
   - *etcd, kube-apiserver, kube-controller-manager, & kube-scheduler*
   - Hence images are required
   - Get the images from gcr.io/google_containers/hyperkube:$TAG
+- Building images is also possible
+  - Release contain files s.a ./kubernetes/server/bin/kube-apiserver.tar
+  - Convert above file to an image *docker load -i kube-apiserver.tar*
+  - Similarly for etcd *cd kubernetes/cluster/images/etcd; make*
+  - NOTE: **use the etcd version provided in the Kubernetes distribution**
+  - Check the value of TAG in the *kubernetes/cluster/images/etcd/Makefile*
+- Setting the env vars
+  - HYPERKUBE_IMAGE=gcr.io/google_containers/hyperkube:$TAG
+  - ETCD_IMAGE=gcr.io/google_containers/etcd:$ETCD_VERSION
+- Verify the image & tag
+  - *docker images*
 - NOTE - hyperkube is a all-in-one binary
   - hyperkube kubelet runs kubelet
   - hyperkube apiserver runs apiserver
+
+### HTTPS access to apiserver
+
+- refer [creating certificates](http://kubernetes.io/docs/admin/authentication/#creating-certificates)
+- Need to prepare the certs & credentials
+- Master needs a cert to act as an HTTPS server
+- kubelets optionally need certs
+  - to identify themselves as clients of the master
+  - & also while serving its API over HTTPS
+- Generate a root cert
+  - use this to sign the master, kublet & kubectl certs
+- Files
+  - CA_CERT is put at apiserver node @ */srv/kubernetes/ca.crt*
+  - MASTER_CERT signed by CA_CERT & put at apiserver node @ */srv/kubernetes/server.crt*
