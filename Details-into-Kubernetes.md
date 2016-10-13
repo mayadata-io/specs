@@ -1,6 +1,6 @@
 # Table of Contents
 1. [Kubernetes from Scratch](#kubernetes-from-scratch)
-2. [Kubernetes on Fedora - Single Node](#kubernetes-on-fedora-single-node)
+2. [Kubernetes on Fedora - Single Node](#kubernetes-on-fedora---single-node)
 3. [Others](#others)
 
 ## Kubernetes from Scratch
