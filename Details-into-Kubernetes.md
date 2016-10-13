@@ -86,3 +86,9 @@
 - Files
   - CA_CERT is put at apiserver node @ */srv/kubernetes/ca.crt*
   - MASTER_CERT signed by CA_CERT & put at apiserver node @ */srv/kubernetes/server.crt*
+  - MASTER_KEY put at apiserver node @ */srv/kubernetes/server.key*
+  - KUBELET_CERT *optional*
+  - KUBELET_KEY *optional*
+- Admin needs token or password to get identified
+  - tokens are alphanumeric e.g. 32 chars
+- Tokens need to be stored in a file for the apiserver to read
