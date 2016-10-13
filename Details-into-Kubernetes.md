@@ -31,7 +31,7 @@
   - Need to allocate a block of IPs for the services 
     - e.g. SERVICE_CLUSTER_IP_RANGE = "10.0.0.0/16" means 65534 services can be active simultaneously
 - Pick up a static IP for master node
-  - e.g. MASTER_IP
+  - e.g. **MASTER_IP**
 - Open access to apiserver ports 80 &/or 443
  - Enable ipv4 forwarding: sysctl net.ipv4.ip_forward = 1
 - Can have fine grained networking policy between PODs using Network Policy resource
@@ -41,7 +41,7 @@
 ### Regions
 
 - Clusters can be represented as regions
-  - Provide a cluster name e.g. CLUSTER_NAME
+  - Provide a cluster name e.g. **CLUSTER_NAME**
 
 <br />
 
@@ -89,6 +89,30 @@
   - MASTER_KEY put at apiserver node @ */srv/kubernetes/server.key*
   - KUBELET_CERT *optional*
   - KUBELET_KEY *optional*
+
+
+### Credentials
+
 - Admin needs token or password to get identified
   - tokens are alphanumeric e.g. 32 chars
 - Tokens need to be stored in a file for the apiserver to read
+  - */var/lib/kube-apiserver/known_tokens.csv*
+- How to distribute credentials to clients ?
+  - Put them into a **kubeconfig** file
+  - refer [kubeconfig](http://kubernetes.io/docs/user-guide/kubeconfig-file/)
+  - Use kubectl commandline options
+
+### kubconfig file for administrators
+
+```bash
+
+# non-https option
+kubectl config set-cluster $CLUSTER_NAME --server=http://$MASTER_IP --insecure-skip-tls-verify=true
+
+# https option
+kubectl config set-cluster $CLUSTER_NAME --certificate-authority=$CA_CERT --embed-certs=true --server=https://$MASTER_IP
+
+# Set the default cluster to use
+kubectl config set-context $CONTEXT_NAME --cluster=$CLUSTER_NAME --user=$USER
+kubectl config use-context $CONTEXT_NAME
+```
