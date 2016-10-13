@@ -48,10 +48,10 @@
   - etcd, docker/rkt, kubelet, kube-proxy, kube-apiserver, kube-controller-manager, kube-scheduler
   - https://github.com/kubernetes/kubernetes/releases/latest
   - Kubernetes binary has all its dependant binaries
-- What should run outside the container ?
+- **What should run outside the container ?**
   - *docker, kubelet, kube-proxy* ~ same way as we run the system daemons
   - Hence bare binaries are reqd
-- What should run as-a container ?
+- **What should run as-a container ?**
   - *etcd, kube-apiserver, kube-controller-manager, & kube-scheduler*
   - Hence images are required
   - Get the images from gcr.io/google_containers/hyperkube:$TAG
@@ -312,9 +312,9 @@ ip link delete docker0
 - services apiserver, scheduler, controller-manager, kubelet & kube-proxy will be managed by systemd
 - configuration resides at /etc/kubernetes
 - services will be divided between hosts
-  - fed-master
+  - fed-master - some IP address
     - runs apiserver, controller-manager & scheduler & etcd
-  - fed-node
+  - fed-node - some other IP address
     - runs kubelet, kube-proxy & docker
 - install kubernetes on all hosts
   - --enablerepo=updates-testing directive in yum command ensures most recent Kuberenetes version is installed
@@ -334,7 +334,8 @@ systemctl disable iptables-services firewalld
 systemctl stop iptables-services firewalld
 ```
 
-#### Edit Kubernetes config
+#### Edit Kubernetes Config on all hosts
+
 - edit /etc/kubernetes/config
   - this will be same across all hosts
 
@@ -353,7 +354,7 @@ KUBE_LOG_LEVEL="--v=0"
 KUBE_ALLOW_PRIV="--allow-privileged=false"
 ```
 
-#### Edit etcd.conf
+#### etcd.conf on master
 
 ```bash
 # /etc/etcd/etcd.conf
@@ -362,7 +363,7 @@ KUBE_ALLOW_PRIV="--allow-privileged=false"
 ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:2379"
 ```
 
-#### Run configuration @ master
+#### /var/run on master
 
 ```bash
 mkdir /var/run/kubernetes
@@ -379,6 +380,49 @@ for SERVICES in etcd kube-apiserver kube-controller-manager kube-scheduler; do
 	systemctl status $SERVICES
 done
 ```
+
+#### node.json for fed-node on master
+
+- create a node.json file on master
+  - it contains info about nodes (*not master*)
+- Run it against kubectl
+  - `kubectl create -f ./node.json`
+- Verify via kubectl get nodes
+- NOTE - Check if the option to auto-register works out
+- NOTE - This is just a representation & not actual provisioning of fed-node
+
+#### kubelet configuration on node
+
+```bash
+# /etc/kubernetes/kubelet
+# Kubernetes kubelet (node) config
+
+# The address for the info server to serve on (set to 0.0.0.0 or "" for all interfaces)
+KUBELET_ADDRESS="--address=0.0.0.0"
+
+# You may leave this blank to use the actual hostname
+KUBELET_HOSTNAME="--hostname-override=fed-node"
+
+# location of the api-server
+KUBELET_API_SERVER="--api-servers=http://fed-master:8080"
+
+# Add your own!
+#KUBELET_ARGS=""
+```
+
+#### Start appropriate services on node
+
+```bash
+for SERVICES in kube-proxy kubelet docker; do 
+    systemctl restart $SERVICES
+    systemctl enable $SERVICES
+    systemctl status $SERVICES 
+done
+```
+
+- Run *`kubectl get nodes`* @ master
+- To delete the node from cluster
+  - kubectl delete -f ./node.json
 
 ## Others
 
