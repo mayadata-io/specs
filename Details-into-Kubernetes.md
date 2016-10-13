@@ -209,4 +209,38 @@ ip link delete docker0
     - turn off docker's IP masquerading
   - masquerade for the destination IPs outside the cluster networking
     - iptables -t nat -A POSTROUTING ! ${CLUSTER_SUBNET} -m addrtype ! --dst-type LOCAL -j MASQUERADE
-    
+
+<br />
+
+### House Keeping Tasks
+
+- configure log rotation e.g. logrotate
+- setup liveness monitoring e.g. supervisord
+
+
+### Bootstrapping the Cluster
+
+- Node services e.g. kubelet, kube-proxy & docker are typically started & managed using automation approaches
+- The remaining master components of Kubernetes are all configured & managed by Kubernetes
+
+### etcd - WIP
+
+- 2 approaches
+  - Run one etcd instance, with its log written to a durable storage (RAID, GCE PD)
+  - Run 3 to 5 etcd instances
+    - logs need not be written to durable storage because storage is replicated
+    - run a single apiserver which connects to one of the etcd nodes
+- Run an etcd instance
+  - copy *`cluster/saltbase/salt/etcd/etcd.manifest`*
+  - Make necessary modifications
+  - Start the pod by putting it into the kubelet manifest directory
+- So etcs runs as a pod
+
+### apiserver, controller manager, scheduler
+
+- Each one of them runs as *a pod on the master node*
+- 
+
+### Cluster Troubleshooting - TODO
+
+- http://kubernetes.io/docs/admin/cluster-troubleshooting/
