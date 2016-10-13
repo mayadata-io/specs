@@ -1,6 +1,6 @@
 # Table of Contents
 1. [Kubernetes from Scratch](#kubernetes-from-scratch)
-2. [Kubernetes on Fedora](#kubernetes-on-fedora)
+2. [Kubernetes on Fedora - Single Node](#kubernetes-on-fedora-single-node)
 3. [Others](#others)
 
 ## Kubernetes from Scratch
@@ -305,9 +305,80 @@ ip link delete docker0
 #### Cluster Addon - Container Resource Monitoring
 
 
-## Kubernetes on Fedora
+## Kubernetes on Fedora - Single Node
 
-####
+#### Install Kubernetes
+
+- services apiserver, scheduler, controller-manager, kubelet & kube-proxy will be managed by systemd
+- configuration resides at /etc/kubernetes
+- services will be divided between hosts
+  - fed-master
+    - runs apiserver, controller-manager & scheduler & etcd
+  - fed-node
+    - runs kubelet, kube-proxy & docker
+- install kubernetes on all hosts
+  - --enablerepo=updates-testing directive in yum command ensures most recent Kuberenetes version is installed
+  - you may want to download the RPM & do a yum install rpm
+
+#### Other installs
+
+- install etcd & iptables
+- add master & node to /etc/hosts on all machines
+  - not required if hostnames are already in DNS
+  - make sure communication via ping works
+- disable the *firewalld* & *iptables-services* on both hosts
+  - Docker does not play well with other firewall rule managers
+
+```bash
+systemctl disable iptables-services firewalld
+systemctl stop iptables-services firewalld
+```
+
+#### Edit Kubernetes config
+- edit /etc/kubernetes/config
+  - this will be same across all hosts
+
+```bash
+
+# Comma separated list of nodes in the etcd cluster
+KUBE_MASTER="--master=http://fed-master:8080"
+
+# logging to stderr means we get it in the systemd journal
+KUBE_LOGTOSTDERR="--logtostderr=true"
+
+# journal message level, 0 is debug
+KUBE_LOG_LEVEL="--v=0"
+
+# Should this cluster be allowed to run privileged docker containers
+KUBE_ALLOW_PRIV="--allow-privileged=false"
+```
+
+#### Edit etcd.conf
+
+```bash
+# /etc/etcd/etcd.conf
+# Let it listen to all IP instead of 127.0.0.1
+# etcd 2.0 uses port 2379 & 2380, older versions used 4001 & 7001
+ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:2379"
+```
+
+#### Run configuration @ master
+
+```bash
+mkdir /var/run/kubernetes
+chown kube:kube /var/run/kubernetes
+chmod 750 /var/run/kubernetes
+```
+
+#### Start appropriate services on master
+
+```bash
+for SERVICES in etcd kube-apiserver kube-controller-manager kube-scheduler; do
+	systemctl restart $SERVICES
+	systemctl enable $SERVICES
+	systemctl status $SERVICES
+done
+```
 
 ## Others
 
