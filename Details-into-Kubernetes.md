@@ -146,7 +146,7 @@ ip link set docker0 down
 ip link delete docker0
 ```
 
-### Docker networking as per Kubernetes
+### Configure Docker as per Kubernetes
 
 - Create own bridge for the per-node CIDR ranges
   - set --bridge=cbr0
@@ -162,3 +162,51 @@ ip link delete docker0
   - DOCKER_NOFILE=1000000
 - NOTE: *Ensire docker works correctly before proceeding with rest of install*
 
+### Configure kubelet - the node agent
+
+- All nodes should run kubelet
+- Args to consider:
+  - HTTPS approach
+    - set --api-servers=https://$MASTER_IP
+    - set --kubeconfig=/var/lib/kubelet/kubeconfig
+  - HTTP approach
+    - set --api-server=http://$MASTER_IP
+  - set --config=/etc/kubernetes/manisfests
+  - set --cluster-dns= address of DNS server
+  - set --cluster-domain= dns domain prefix
+  - set --docker-root=
+  - set --root-dir=
+  - set --configure-cbr0=
+  - set --register-node=
+
+### Configure kube-proxy
+
+- just the HTTPS or HTTP approach
+
+### Networking
+
+- Each node needs to be allocated its own CIDR for pod networking
+  - NODE_X_POD_CIDR
+- A bridge needs to be created on each node cbr0
+  - The bridge needs an address from $NODE_X_BRIDGE_ADDR
+  - By convention the first IP is used i.e. NODE_X_BRIDGE_ADDR
+  - e.g. if NODE_X_POD_CIDR = 10.0.0.0/16
+  - then NODE_X_BRIDGE_ADDR is 10.0.0.1/16
+- automatic approach
+  - set --configure-cbr0=true in kubelet option & restart kublet service
+  - NOTE: kubelet will configure cbr0 automatically
+- manual approach
+  - set --configure-cbr0=false on kubelet & restart
+  - create bridge
+    - *`ip link add name cbr0 type bridge`*
+  - set mtu
+    - *`ip link set dev cbr0 mtu 140`*
+  - add node's network to the bridge ~ docker will go on other side of bridge
+    - *`ip addr add $NODE_X_BRIDGE_ADDR` dev cbr0*
+  - turn it up
+    - *`ip link set dev cbr0 up`*
+  - If PODs need to communicate with each other
+    - turn off docker's IP masquerading
+  - masquerade for the destination IPs outside the cluster networking
+    - iptables -t nat -A POSTROUTING ! ${CLUSTER_SUBNET} -m addrtype ! --dst-type LOCAL -j MASQUERADE
+    
