@@ -2,13 +2,9 @@
 
 - Refer [scratch](http://kubernetes.io/docs/getting-started-guides/scratch/)
 
-<br />
-
 ### Cloud Provider 
 - Specs - pkg/cloudprovider/cloud.go
 - Manages load balancers, nodes, & networking routes
-
-<br />
 
 ### On IPs
 
@@ -36,14 +32,10 @@
  - Enable ipv4 forwarding: sysctl net.ipv4.ip_forward = 1
 - Can have fine grained networking policy between PODs using Network Policy resource
 
-<br />
-
 ### Regions
 
 - Clusters can be represented as regions
   - Provide a cluster name e.g. **CLUSTER_NAME**
-
-<br />
 
 ### Binaries
 
@@ -210,20 +202,17 @@ ip link delete docker0
   - masquerade for the destination IPs outside the cluster networking
     - iptables -t nat -A POSTROUTING ! ${CLUSTER_SUBNET} -m addrtype ! --dst-type LOCAL -j MASQUERADE
 
-<br />
-
 ### House Keeping Tasks
 
 - configure log rotation e.g. logrotate
 - setup liveness monitoring e.g. supervisord
-
 
 ### Bootstrapping the Cluster
 
 - Node services e.g. kubelet, kube-proxy & docker are typically started & managed using automation approaches
 - The remaining master components of Kubernetes are all configured & managed by Kubernetes
 
-### etcd - WIP
+### etcd pod
 
 - 2 approaches
   - Run one etcd instance, with its log written to a durable storage (RAID, GCE PD)
@@ -236,10 +225,79 @@ ip link delete docker0
   - Start the pod by putting it into the kubelet manifest directory
 - So etcs runs as a pod
 
-### apiserver, controller manager, scheduler
+### apiserver pod
 
 - Each one of them runs as *a pod on the master node*
-- 
+- Start with a provided template
+- Flags that need to be set
+  - --cloud-provider=
+  - --cloud-config=
+  - --address=${MASTER_IP} 
+    - or --bind-address=127.0.0.1 & --address=127.0.0.1 to run a proxy on a master node
+  - --cluster-name=$CLUSRER_NAME
+  - --service-cluster-ip-range=$SERVICE_CLUSTER_IP_RANGE
+  - --etcd-servers=http://127.0.0.1:4001
+  - --tls-cert-file=/srv/kubernetes/server.cert
+  - --tls-private-key-file=/srv/kubernetes/server.key
+  - --admission-control=$RECOMMENDED_LIST
+  - --allow-priviledged=true
+    - if you trust your cluster user to run pods as root
+- For HTTP only approach
+  - --token-auth-file=/dev/null
+  - --insecure-bind-address=$MASTER_IP
+  - --advertise-address=$MASTER_IP
+- For HTTPS approach
+  - --client-ca-file=/srv/kubernetes/ca.crt
+  - --token-auth-file=/srv/kubernetes/known_tokens.csv
+  - --basic-auth-file=/srv/kubernetes/basic_auth.csv
+- POD mounts several file system directories of the node
+  - via hostPath
+  - /etc/ssl - allows apiserver to find SSL root certs to authenticate the cloud provider
+    - not required if bare metal
+  - /srv/kubernetes - allows apiserver to read certs & credentials stored on node disk
+    - these could instead be stored on a persistent disk e.g. GCE PD
+  - optionally mount /var/log as well & redirect output
+    - this is reqd. if *logs need to be accessible from the root filesystem with tools like journalctl*
+
+### scheduler pod
+
+- use the required manifest file
+
+### controller-manager pod
+
+- use the required manifest
+- following flags may be considered
+  - --cluster-name=$CLUSTER_NAME
+  - --cluster-cidr=
+  - --allocate-node-cidrs=
+  - --cloud-provider=
+  - --cloud-config=
+  - --service-account-private-key-file=/srv/kubernetes/server.key
+  - --master=127.0.0.1:8080
+
+### Cloud Providers
+
+- --cloud-provuder
+  - aws, gce, mesos, vagrant, unset
+  - unset is used for bare metal
+- some of these cloud providers require a config file setting
+
+### Starting & Verifying apiserver, etcd & controller-manager pods
+
+- Place each pod template into kubelet config dir
+  - i.e. --config= option of kubelet
+- docker ps | grep apiserver
+- echo $(curl -s http://localhost:8080/healthz)
+- curl -s http://localhost:8080/api
+- if --register-node=true is set for kubelets
+  - kubelet will begin self-registering with the apiserver
+  - kubectl get nodes
+
+### Cluster Addon - DNS
+
+### Cluster Addon - Logging
+
+### Cluster Addon - Container Resource Monitoring
 
 ### Cluster Troubleshooting - TODO
 
