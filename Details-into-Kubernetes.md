@@ -573,6 +573,13 @@ FLANNEL_IPMASQ=false
 - All nodes have docker & bridge-utils installed
 - Nodes reachable to each other
 - Master node needs to be reachable to internet
+- all remote servers can be ssh logged in without a password by using key authentication
+- 1 master & 2 nodes
+
+#### git clone locally
+
+
+
 
 ## Others
 
