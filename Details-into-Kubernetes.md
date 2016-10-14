@@ -287,7 +287,7 @@ ip link delete docker0
   - unset is used for bare metal
 - some of these cloud providers require a config file setting
 
-#### Starting & Verifying apiserver, etcd & controller-manager pods
+#### Starting & Verifying apiserver, etcd & controller-manager pods **`TAG - SUPPORT`**
 
 - Place each pod template into kubelet config dir
   - i.e. --config= option of kubelet
@@ -423,6 +423,86 @@ done
 - Run *`kubectl get nodes`* @ master
 - To delete the node from cluster
   - kubectl delete -f ./node.json
+
+## Kubernetes on Fedora - Multi Node
+
+#### Assumptions
+
+- Nodes should have different names & labels
+- Kubernetes master is running etcd, apiserver, control-manager & scheduler
+- Kubernetes nodes are running kube-proxy, docker & kubelet
+- Nodes should have Fedora installed
+- We shall use kernel based vxlan as flannel's backend
+
+#### Introducting Flannel
+
+- Install flannel on Kubernetes nodes
+- Flannel on each node configures an overlay network that docker uses
+- Flannel runs on each node to setup a unique class-C container network
+- Flannel provides udp & vxlan among other overlay networking backend options
+
+#### flannel config on master
+
+- flannel-config.json
+  - choose an IP that is not part of public IP range
+
+```json
+{
+    "Network": "18.16.0.0/16",
+    "SubnetLen": 24,
+    "Backend": {
+        "Type": "vxlan",
+        "VNI": 1
+     }
+}
+```
+
+- add config to etcd server on master
+  - *`etcdctl set /coreos.com/network/config < flannel-config.json`*
+- verify **`TAG - SUPPORT`**
+  - *`etcdctl get /coreos.com/network/config`*
+
+#### Commands on all Kubernetes nodes
+
+- w.r.t flannel
+
+```bash
+# /etc/sysconfig/flanneld
+# Flanneld configuration options
+
+# etcd url location.  Point this to the server where etcd runs
+FLANNEL_ETCD="http://fed-master:2379"
+
+# etcd config key.  This is the configuration key that flannel queries
+# For address range assignment
+FLANNEL_ETCD_KEY="/coreos.com/network"
+
+# Any additional options that you want to pass
+FLANNEL_OPTIONS=""
+```
+
+- By default, flannel uses the interface for default route.
+  - If multiple interfaces & want to use a non-default one
+  - add *`-iface=`*
+- Enable flannel service
+  - systemctl enable flanneld
+- Start flannel service
+  - systemctl start flanneld
+- flannel vs docker bridge
+  - if docker is running then stop docker
+  - delete docker bridge ~ docker0
+  - start flanneld
+  - restart docker or reboot system
+
+```bash
+  systemctl stop docker
+  ip link delete docker0
+  systemctl start flanneld
+  systemctl start docker
+```
+
+#### Verify flannel & cluster configurations **`TAG - SUPPORT`**
+
 
 ## Others
 
