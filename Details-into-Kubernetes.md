@@ -501,7 +501,10 @@ FLANNEL_OPTIONS=""
   systemctl start docker
 ```
 
-#### Verify flannel & cluster configurations <red>`TAG - SUPPORT`</red>
+#### Verify flannel & cluster configurations 
+```html
+<style="color:red"> TAG - SUPPORT </style>
+```
 
 ```bash
 # ip -4 a|grep inet
