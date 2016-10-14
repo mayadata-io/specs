@@ -8,7 +8,7 @@
 
 ## Kubernetes Made Easy
 
-#### Kube Jargons
+#### Kubernetes Jargons
 
 - Host roles can be:
   - master represented as `a` or
@@ -20,10 +20,11 @@
 - Admission Controllers - ??
 - NodePort visibility - ??
 
-#### Key Points for Installing Kubernetes
+#### FAQs w.r.t Kubernetes Installation
 
 - Starting Point - Download the latest release from following link:
   - [releases](https://github.com/kubernetes/kubernetes/releases)
+- CLOUD_PROVIDER vs KUBERNETES_PROVIDER options. How different as these ?
 
 ## Hardening Kubernetes
 
