@@ -612,6 +612,29 @@ export FLANNEL_NET=172.16.0.0/16
 - make the kubectl availalbe via PATH
 - kubectl get nodes
 
+#### Troubleshoot `TAG - SUPPORT`
+
+- Check /var/log/upstart/etcd.log
+- Bring down & up the cluster
+  - `KUBERNETES_PROVIDER=ubuntu ./kube-down.sh`
+  - `KUBERNETES_PROVIDER=ubuntu ./kube-up.sh`
+- Customizations
+  - edit `/etc/default/{component_name}`
+  - then restart `sudo service {component_name} restart`
+- Upgrading the cluster
+  - cd cluster/
+  - Run `KUBERNETES_PROVIDER=ubuntu ./kube-push.sh [-m|-n <node id>] <version>`
+  - -m refers to master
+  - -n <node id> refers to specific node
+  - default is upgrade all nodes
+  - **Where will the new binaries be sourced from ?**
+    - tree cluster/ubuntu/binaries
+  - NOTE: This script only replaces the binaries. It does not delete any resource
+- Verify Upgrade
+  - At master `kubectl version`
+  - At node `cd /opt/bin && sudo ./kubelet --version`
+
+
 ## Others
 
 #### Cluster Troubleshooting - TODO
