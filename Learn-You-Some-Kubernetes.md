@@ -1,9 +1,23 @@
 # Table of Contents
+0. [Kubernetes Made Easy](#kubernetes-made-easy)
 1. [Kubernetes from Scratch](#kubernetes-from-scratch)
 2. [Kubernetes on Fedora - Single Node](#kubernetes-on-fedora---single-node)
 3. [Kubernetes on Fedora - Multi Node](#kubernetes-on-fedora---multi-node)
 4. [Kubernetes on Ubuntu](#kubernetes-on-ubuntu)
 5. [Others](#others)
+
+## Kubernetes Made Easy
+
+#### Understand the Jargons
+
+- Host roles can be master (a) or minion (i) or both (ai)
+- Networking can be CNI based or Flannel based
+- Admission Controllers - ??
+- NodePort visibility - ??
+
+## Hardening Kubernetes
+
+#### Lint the scripts
 
 ## Kubernetes from Scratch
 
