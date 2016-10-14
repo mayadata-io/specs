@@ -22,9 +22,12 @@
 
 #### FAQs w.r.t Kubernetes Installation
 
-- Starting Point - Download the latest release from following link:
-  - [releases](https://github.com/kubernetes/kubernetes/releases)
+- What is the starting point ?
+  - Download the latest release from following link:
+    - [releases](https://github.com/kubernetes/kubernetes/releases)
 - CLOUD_PROVIDER vs KUBERNETES_PROVIDER options. How different as these ?
+- Is `cluster` directory present in the releases that maps to following link ?
+  - https://github.com/kubernetes/kubernetes/tree/master/cluster
 
 ## Hardening Kubernetes
 
