@@ -501,8 +501,44 @@ FLANNEL_OPTIONS=""
   systemctl start docker
 ```
 
-#### Verify flannel & cluster configurations **`TAG - SUPPORT`**
+#### Verify flannel & cluster configurations <red>`TAG - SUPPORT`</red>
 
+```bash
+# ip -4 a|grep inet
+    inet 127.0.0.1/8 scope host lo
+    inet 192.168.122.77/24 brd 192.168.122.255 scope global dynamic eth0
+    inet 18.16.29.0/16 scope global flannel.1
+    inet 18.16.29.1/24 scope global docker0
+```
+
+- docker0 is assigned a subnet 18.16.29.1/24 on each Kubernetes node
+- IP addresses of flannel & docker are in the same network
+
+- If it is a 1 master, 3 nodes cluster, you will notice a similar output
+  - one block for each node showing the subnets they have been assigned
+  - try associating the subnet to a node via the MAC address & public IP
+
+```bash
+# curl -s http://fed-master:4001/v2/keys/coreos.com/network/subnets | python -mjson.tool
+
+{
+    "node": {
+        "key": "/coreos.com/network/subnets",
+            {
+                "key": "/coreos.com/network/subnets/18.16.29.0-24",
+                "value": "{\"PublicIP\":\"192.168.122.77\",\"BackendType\":\"vxlan\",\"BackendData\":{\"VtepMAC\":\"46:f1:d0:18:d0:65\"}}"
+            },
+            {
+                "key": "/coreos.com/network/subnets/18.16.83.0-24",
+                "value": "{\"PublicIP\":\"192.168.122.36\",\"BackendType\":\"vxlan\",\"BackendData\":{\"VtepMAC\":\"ca:38:78:fc:72:29\"}}"
+            },
+            {
+                "key": "/coreos.com/network/subnets/18.16.90.0-24",
+                "value": "{\"PublicIP\":\"192.168.122.127\",\"BackendType\":\"vxlan\",\"BackendData\":{\"VtepMAC\":\"92:e2:80:ba:2d:4d\"}}"
+            }
+    }
+}
+```
 
 ## Others
 
