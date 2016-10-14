@@ -502,9 +502,8 @@ FLANNEL_OPTIONS=""
 ```
 
 #### Verify flannel & cluster configurations 
-```html
-<style="color:red"> TAG - SUPPORT </style>
-```
+
+<span style="color:red"> TAG - SUPPORT </span>
 
 ```bash
 # ip -4 a|grep inet
