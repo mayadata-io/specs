@@ -8,12 +8,22 @@
 
 ## Kubernetes Made Easy
 
-#### Understand the Jargons
+#### Kube Jargons
 
-- Host roles can be master (a) or minion (i) or both (ai)
-- Networking can be CNI based or Flannel based
+- Host roles can be:
+  - master represented as `a` or
+  - minion represented as `i` or
+  - both represented as `ai`
+- Networking can be:
+  - CNI based or
+  - Flannel based
 - Admission Controllers - ??
 - NodePort visibility - ??
+
+#### Key Points for Installing Kubernetes
+
+- Starting Point - Download the latest release from following link:
+  - [releases](https://github.com/kubernetes/kubernetes/releases)
 
 ## Hardening Kubernetes
 
