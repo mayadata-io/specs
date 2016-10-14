@@ -586,7 +586,7 @@ FLANNEL_IPMASQ=false
 - configure cluster info
 
 ```bash
-# /ubuntu/config-default.sh
+# cluster/ubuntu/config-default.sh
 
 export nodes="vcap@10.10.103.250 vcap@10.10.103.162 vcap@10.10.103.223"
 export roles="ai i i"
