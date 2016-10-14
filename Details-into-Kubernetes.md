@@ -576,10 +576,41 @@ FLANNEL_IPMASQ=false
 - all remote servers can be ssh logged in without a password by using key authentication
 - 1 master & 2 nodes
 
-#### git clone locally
+#### git clone locally & configure
 
+- `git clone --depth 1 https://github.com/kubernetes/kubernetes.git`
+- customizing versions can be done via:
+  - `export KUBE_VERSION=1.2.0`
+  - `export FLANNEL_VERSION=0.5.0`
+  - `export ETCD_VERSION=2.2.0`
+- configure cluster info
 
+```bash
+# /ubuntu/config-default.sh
 
+export nodes="vcap@10.10.103.250 vcap@10.10.103.162 vcap@10.10.103.223"
+export roles="ai i i"
+export NUM_NODES=${NUM_NODES:-3}
+export SERVICE_CLUSTER_IP_RANGE=192.168.3.0/24
+export FLANNEL_NET=172.16.0.0/16
+```
+
+- ai refers to master as well as node roles
+- i refers to node role
+- FLANNET_NET should not conflict with SERVICE_CLUSTER_IP_RANGE
+
+#### Bring up the cluster
+
+- cd cluster/
+- Run `KUBERNETES_PROVIDER=ubuntu ./kube-up.sh`
+  - script uses scp to copy binaries & config files to all machines
+  - You will need to type sudo password when prompted
+
+#### Verify `TAG - SUPPORT`
+
+- cd cluster/ubuntu/binaries
+- make the kubectl availalbe via PATH
+- kubectl get nodes
 
 ## Others
 
