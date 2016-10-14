@@ -2,7 +2,7 @@
 1. [Kubernetes from Scratch](#kubernetes-from-scratch)
 2. [Kubernetes on Fedora - Single Node](#kubernetes-on-fedora---single-node)
 3. [Kubernetes on Fedora - Multi Node](#kubernetes-on-fedora---multi-node)
-4. [Kubernetes on Fedora - Ansible](#kubernetes-on-fedora---ansible)
+4. [Kubernetes on Ubuntu](#kubernetes-on-ubuntu)
 5. [Others](#others)
 
 ## Kubernetes from Scratch
@@ -566,7 +566,13 @@ FLANNEL_IPMASQ=false
   - repeat the same thing at the other node & its container
   - ping from within a container to other container's IP
 
-## Kubernetes on Fedora - Ansible
+## Kubernetes on Ubuntu
+
+#### Assumptions
+
+- All nodes have docker & bridge-utils installed
+- Nodes reachable to each other
+- Master node needs to be reachable to internet
 
 ## Others
 
