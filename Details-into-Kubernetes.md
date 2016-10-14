@@ -1,7 +1,9 @@
 # Table of Contents
 1. [Kubernetes from Scratch](#kubernetes-from-scratch)
 2. [Kubernetes on Fedora - Single Node](#kubernetes-on-fedora---single-node)
-3. [Others](#others)
+3. [Kubernetes on Fedora - Multi Node](#kubernetes-on-fedora---multi-node)
+4. [Kubernetes on Fedora - Ansible](#kubernetes-on-fedora---ansible)
+5. [Others](#others)
 
 ## Kubernetes from Scratch
 
@@ -563,6 +565,8 @@ FLANNEL_IPMASQ=false
     - inet 18.16.29.4/24 scope global eth0
   - repeat the same thing at the other node & its container
   - ping from within a container to other container's IP
+
+## Kubernetes on Fedora - Ansible
 
 ## Others
 
