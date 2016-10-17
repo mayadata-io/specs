@@ -19,6 +19,8 @@
   - Flannel based
 - Admission Controllers - ??
 - NodePort visibility - ??
+- federation ??
+
 
 #### FAQs w.r.t Kubernetes Installation
 
