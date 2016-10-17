@@ -25,9 +25,10 @@
 - What is the starting point ?
   - Download the latest release from following link:
     - [releases](https://github.com/kubernetes/kubernetes/releases)
+  - Does the `cluster` directory present in the releases' tar file maps to following link ?
+    - https://github.com/kubernetes/kubernetes/tree/master/cluster
 - CLOUD_PROVIDER vs KUBERNETES_PROVIDER options. How different as these ?
-- Is `cluster` directory present in the releases that maps to following link ?
-  - https://github.com/kubernetes/kubernetes/tree/master/cluster
+
 
 ## Hardening Kubernetes
 
