@@ -1,4 +1,4 @@
-# specs
+# Specs
 
 This repo will hold specs for projects under the openebs organisation.
 
