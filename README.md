@@ -6,6 +6,13 @@ This is an attempt towards implementation of below article:
 
 - https://goberoi.com/on-writing-product-specs-5ca697b992fd#.rzni8ldtw
 
+This is also an attempt to fulfill below engineering principles:
+
+- *Shipping beats production*
+- *Anybody can contribute to anything*
+
+> Yes, these are Khan Academy's principles. OpenEBS is staunch supporter to above principles.
+
 ## Do critical thinking up front
 
 Writing forces you to think through specifics, in prose, 
