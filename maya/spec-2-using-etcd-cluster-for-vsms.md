@@ -65,9 +65,9 @@ or Q2 - Should we use Registrator code inside Maya & produce a single Maya binar
 
 ### Deployment Strategy
 
-- a linux host + docker == openebs host
+- A linux host + docker == openebs host
 - etcd runs on openebs host
-- Registrator 
+- Registrator will run as-is in a docker container
 
 # Detailed/Final Solution
 
@@ -101,3 +101,6 @@ be finalized in your last spec review.
   - It is a container.
   - It is a docker container specifically.
   - It is a docker container running a iscsi service.
+- What is a openebs host ?
+  - It is a linux host with docker running.
+  - There will be other components as well, but lets begin with above knowledge for the time being.
