@@ -70,10 +70,10 @@ or Q2 - Should we use Registrator code inside Maya & produce a single Maya binar
 - etcd runs on openebs host
 - Registrator will run as-is in a docker container
 
-# Detailed/Final Solution
+# Final Solution
 
-> Your proposal should be detailed enough for your team to consume and execute — think of it like code
-for human brains to run[1].
+> Your proposal should be detailed enough for your team to consume and execute. Provide the 
+code link and install / demo steps.
 
 
 # Timeline
