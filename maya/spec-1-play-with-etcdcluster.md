@@ -24,10 +24,10 @@ at each goal and answer: did we hit it?
 > Provide evidence that your audience needs to understand the problem and believe in your proposal.
 Assumptions, use-cases, metrics, etc.
 
-# Detailed Solution
+# Final Solution
 
-> Your proposal should be detailed enough for your team to consume and execute — think of it like code
-for human brains to run[1].
+> Your proposal should be detailed enough for your team to consume and execute. Provide the 
+code link and install / demo steps.
 
 # Timeline
 
