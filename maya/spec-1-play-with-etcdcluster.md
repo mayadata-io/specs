@@ -7,6 +7,10 @@ Be specific, and provide metrics.
 - The data store should be highly available as it will form the backbone of the management plane
 - We have decided to play with etcd
 
+> NOTE: **The details mentioned here are applicable to when this spec was introduced. 
+If there are any changes to the overal plan (*which obviously will*), there should be
+separate specs file detailing the modified design decisions, etc.**
+
 # Measurable Goals
 
 > Promise clear deliverables and outcomes. Identify what’s out of scope. Make sure it’s easy to look
