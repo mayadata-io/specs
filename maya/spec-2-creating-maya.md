@@ -6,6 +6,7 @@ Be specific, and provide metrics.
 - Earlier we played with creation of a etcd cluster. 
 - Now its time to use the etcd cluster.
   - i.e. Ability to make use of etcd cluster for persisting configuration data
+- This is now the basic building block of creating maya.
 
 > NOTE: **The details mentioned here are applicable to when this spec was introduced. 
 If there are any changes to the overal plan (*which obviously will*), there should be
@@ -16,7 +17,8 @@ separate specs file detailing the modified design decisions, etc.**
 > Promise clear deliverables and outcomes. Identify what’s out of scope. Make sure it’s easy to look
 at each goal and answer: did we hit it?
 
-- Setup & Tear down a clustered maya deployment.
+- Setup & Tear down a maya deployment.
+  - A clustered deployment
 - This will provide necessary ideas to using etcd cluster for openebs' VSMs (Virtual Storage Machines).
 
 # Context
