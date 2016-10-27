@@ -11,7 +11,7 @@ This is also an attempt to fulfill below engineering principles:
 - *Shipping beats production*
 - *Anybody can contribute to anything*
 
-> Yes, these are Khan Academy's principles. OpenEBS is staunch supporter to above principles.
+> Yes, these are Khan Academy's principles. OpenEBS is a staunch supporter of above principles.
 
 ## Do critical thinking up front
 
