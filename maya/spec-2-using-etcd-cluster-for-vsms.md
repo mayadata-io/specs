@@ -3,12 +3,13 @@
 > Frame the problem that you trying to solve. More importantly, explain why it is worth addressing. 
 Be specific, and provide metrics.
 
-- Earlier we played with creation of a etcd cluster. Now its time to use the same.
-- Ability to make use of etcd cluster for persisting configuration data
+- Earlier we played with creation of a etcd cluster. 
+- Now its time to use the etcd cluster.
+  - i.e. Ability to make use of etcd cluster for persisting configuration data
 
-> NOTE: The details mentioned here are applicable to current date & time. 
-If there are any changes to this doc, there will be /should be separate specs 
-file detailing the design decisions, etc.
+> NOTE: **The details mentioned here are applicable to when this spec was introduced. 
+If there are any changes to the overal plan (*which obviously will*), there should be
+separate specs file detailing the modified design decisions, etc.**
 
 # Measurable Goals
 
@@ -82,7 +83,7 @@ be finalized in your last spec review.
 
 - To be completed by 4th Nov 2016
 
-# Others
+# Possible Questions
 
 ### What if Registrator is not useful for openebs ?
 
@@ -93,14 +94,15 @@ be finalized in your last spec review.
 
 - https://github.com/gliderlabs/logspout
 
-# Appendix
+### What is a VSM ?
 
-- What is a VSM ?
-  - It is Virtual Storage Machine.
-  - It is not a VM on any hypervisor.
-  - It is a container.
-  - It is a docker container specifically.
-  - It is a docker container running a iscsi service.
-- What is a openebs host ?
-  - It is a linux host with docker running.
-  - There will be other components as well, but lets begin with above knowledge for the time being.
+- It is Virtual Storage Machine.
+- It is not a VM on any hypervisor.
+- It is a container.
+- It is a docker container specifically.
+- It is a docker container running a iscsi service.
+
+### What is an openebs host ?
+
+- It is a linux host with docker running.
+- There will be other components as well, but lets begin with above knowledge for the time being.
