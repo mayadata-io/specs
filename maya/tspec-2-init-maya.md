@@ -115,3 +115,46 @@ ubuntu@ubuntu-xenial:~$ curl http://localhost:2379/v2/keys/services/hello-world
 ubuntu@ubuntu-xenial:~$ # We see 2 unique keys based on docker names
 ubuntu@ubuntu-xenial:~$ # These keys are nested under /services/hello-world
 ```
+
+### etcd leader stats
+
+- leader has a view of entire cluster
+- keeps track of:
+  - latency
+  - count of failed / successful Raft RPC requests
+
+```bash
+ubuntu@ubuntu-xenial:~$ curl http://localhost:2379/v2/stats/leader
+
+{"leader":"1678331e18f3811d",
+ "followers":{
+   "12df9dc201e641ca":{
+     "latency":{
+       "current":0.002169,
+       "average":0.009764827744420562,
+       "standardDeviation":0.04865928038819622,
+       "minimum":0.000552,
+       "maximum":1.668563
+     },
+     "counts":{
+       "fail":0,
+       "success":17654
+     }
+   },
+   "d860400699ce61e":{
+     "latency":{
+       "current":0.002077,
+       "average":0.009798825684871677,
+       "standardDeviation":0.05406535945924713,
+       "minimum":0.000614,
+       "maximum":2.393876
+     },
+     "counts":{
+       "fail":0,
+       "success":17193
+     }
+   }
+ }
+}
+
+```
