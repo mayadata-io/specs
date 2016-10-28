@@ -77,4 +77,41 @@ ubuntu@ubuntu-xenial:~$ curl http://localhost:2379/v2/keys/services/hello-world/
 
 ubuntu@ubuntu-xenial:~$ # there is no dir: true here !! Just the key value !!
 
+ubuntu@ubuntu-xenial:~$ # What if I create another container of same image ?
+
+ubuntu@ubuntu-xenial:~$ sudo docker run -d -p 80 tutum/hello-world
+209d36f619fd501b852bfb195e470146d23553fa216f295afa693d368e5c4d36
+
+ubuntu@ubuntu-xenial:~$ sudo docker ps
+CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS  PORTS  NAMES
+209d36f619fd        tutum/hello-world               "/bin/sh -c 'php-fpm "   5 seconds ago       Up 3 seconds 0.0.0.0:32770->80/tcp   admiring_poincare
+95c5a07f76d0        tutum/hello-world               "/bin/sh -c 'php-fpm "   24 minutes ago      Up 24 minutes       0.0.0.0:32769->80/tcp   boring_mahavira
+de8d428470b1        gliderlabs/registrator:latest   "/bin/registrator etc"   57 minutes ago      Up 57 minutes                               mayaregistrar
+
+ubuntu@ubuntu-xenial:~$ # Docker creates 3 containers
+ubuntu@ubuntu-xenial:~$ # Lets check the etcd database
+
+ubuntu@ubuntu-xenial:~$ curl http://localhost:2379/v2/keys/services/hello-world
+{"action":"get",
+ "node":{
+   "key":"/services/hello-world",
+   "dir":true,
+   "nodes":[{
+     "key":"/services/hello-world/ubuntu-xenial:boring_mahavira:80",
+     "value":":32769",
+     "modifiedIndex":9,
+     "createdIndex":9
+     },{
+     "key":"/services/hello-world/ubuntu-xenial:admiring_poincare:80",
+     "value":":32770",
+     "modifiedIndex":10,
+     "createdIndex":10
+   }],
+   "modifiedIndex":9,
+   "createdIndex":9
+ }
+}
+
+ubuntu@ubuntu-xenial:~$ # We see 2 unique keys based on docker names
+ubuntu@ubuntu-xenial:~$ # These keys are nested under /services/hello-world
 ```
