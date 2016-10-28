@@ -158,3 +158,13 @@ ubuntu@ubuntu-xenial:~$ curl http://localhost:2379/v2/stats/leader
 }
 
 ```
+
+### Other etcd API options
+
+- curl http://localhost:2379/v2/stats/self
+- curl http://localhost:2379/v2/stats/store
+- Set key from a file
+  - curl http://localhost:2379/v2/keys/afile - XPUT --data-urlencode value@file.txt
+- Deleting a dir
+  - curl http://localhost:2379/v2/keys/some_dir?dir=true -XDELETE
+  - curl http://localhost:2379/v2/keys/some_dir?recursive=true -XDELETE
