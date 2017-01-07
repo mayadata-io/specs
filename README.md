@@ -1,5 +1,11 @@
 # Specs
 
+**Deprecated**
+
+> We will be using individual repo's to manage the specs, requirements etc.
+
+## What is specs ?
+
 This repo will hold specs for projects under the openebs organisation.
 
 This is an attempt towards implementation of below article:
